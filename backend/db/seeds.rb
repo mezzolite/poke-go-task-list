@@ -22,8 +22,8 @@ instinct = Team.create(
     leader_image:"https://vignette.wikia.nocookie.net/pokemongo/images/a/aa/Icon_Spark.png/revision/latest?cb=20181208031001")
 
 rocket = Team.create(
-    name: "Team Rocket", 
+    name: "Rocket", 
     description: "Team Rocket is a criminal syndicate set to steal other people's Pokémon, with their headquarters in the Kanto Region and the Johto region and a branch in Sevii Islands. They are headed by Giovanni, who also doubles as the Viridian City Gym Leader.",
-    image: "https://vignette.wikia.nocookie.net/universeconquest/images/6/67/Team_Rocket_Logo.jpg/revision/latest?cb=20190206180338",
+    image: "https://fadeawayworld.com/wp-content/uploads/2017/09/HOU.png",
     leader: "Giovanni",
     leader_image: "http://fanaru.com/pokemon/image/142988-pokemon-giovanni-team-rocket-leader.png")

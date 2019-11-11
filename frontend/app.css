@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+SC&display=swap');
+
+body {
+    font-family: 'Alegreya SC', serif;
+    background-color: black;
+    color: thistle;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 4rem;
+
+}
+
+.cardContainer {
+    display: flex;
+}
+
+.teamCard > img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.teamCard > button {
+    float: right;
+    color: thistle;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    padding: 5%;
+    font-size: 100%;
+    font-family: 'Alegreya SC', serif;
+}
+
+.teamCard {
+    padding: 2rem;
+}
