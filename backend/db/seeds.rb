@@ -1,4 +1,5 @@
 Team.destroy_all
+Task.destroy_all
 
 mystic = Team.create(
     name: "Mystic", 
@@ -27,3 +28,33 @@ rocket = Team.create(
     image: "https://fadeawayworld.com/wp-content/uploads/2017/09/HOU.png",
     leader: "Giovanni",
     leader_image: "https://www.futuregamereleases.com/wp-content/uploads/2019/07/pokemon-go-giovanni-event.png")
+
+
+m_make_five_nice_throws = Task.create(name: "Make five nice throws",description: "Make five nice throws in a row.",reward: "5 great balls",team: mystic)
+m_hatch_three_eggs = Task.create(name: "Hatch three eggs",description: "Hatch three eggs.",reward: "1 razz berry",team: mystic)
+m_use_five_berries = Task.create(name: "Use five berries",description: "Use five berries when trying to catch a pokemon.",reward: "200 stardust",team: mystic)
+m_win_three_gym_battles = Task.create(name: "Win three gym battles",description: "Win three gym battles.",reward: "5 ultra Balls",team: mystic)
+m_send_ten_gifts_to_friends = Task.create(name: "Send ten gifts",description: "Send ten gifts to anyone in your friends list.",reward: "1 Rare Candy",team: mystic)
+
+v_make_five_nice_throws = Task.create(name: "Make five nice throws",description: "Make five nice throws in a row.",reward: "2 max potions",team: valor )
+v_hatch_three_eggs = Task.create(name: "Hatch three eggs",description: "Hatch three eggs.",reward: "1 max revive",team: valor)
+v_use_five_berries = Task.create(name: "Use five berries",description: "Use five berries when trying to catch a pokemon.",reward: "5 great balls",team: valor)
+v_win_three_gym_battles = Task.create(name: "Win three gym battles",description: "Win three gym battles.",reward: "1000 star dust",team: valor)
+v_send_ten_gifts_to_friends = Task.create(name: "Send ten gifts",description: "Send ten gifts to anyone in your friends list.",reward: "1 gift",team: valor)
+
+i_make_five_nice_throws = Task.create(name: "Make five nice throws",description: "Make five nice throws in a row.",reward: "6 ultra balls",team: instinct )
+i_hatch_three_eggs = Task.create(name: "Hatch three eggs",description: "Hatch three eggs.",reward: "1 sun stones",team: instinct)
+i_use_five_berries = Task.create(name: "Use five berries",description: "Use five berries when trying to catch a pokemon.",reward: "1 razz berry",team: instinct)
+i_win_three_gym_battles = Task.create(name: "Win three gym battles",description: "Win three gym battles.",reward: "5 nanab berry",team: instinct)
+i_send_ten_gifts_to_friends = Task.create(name: "Send ten gifts",description: "Send ten gifts to anyone in your friends list.",reward: "1 max revive",team: instinct)
+
+r_steal_five_gifts = Task.create(name: "Steal five gifts" ,description: "Relieve trainers of their possesions.",reward: "5 stolen gifts",team: rocket)
+r_make_a_shadow_pokemon = Task.create(name: "Make a shadow pokemon",description: "Introduce pokemon to darkness.",reward: "Have a dark pokemon",team: rocket )
+r_use_pinap_berry = Task.create(name: "Use a pinap berry",description: "Feed pinap berry to get more candy.",reward: "Get more candy",team: rocket)
+r_win_three_gym_battles = Task.create(name: "Win three gym battles",description: "Beat the stuffing out of other teams.",reward: "The glory of winning",team: rocket)
+r_make_a_child_cry = Task.create(name: "Make a child cry",description: "Use your imagination.",reward: "The tears of a child",team: rocket )
+
+catch_five_fire = Task.create(name:"Catch five fire pokemon",description: "Catch any five fire type pokemon.", reward: "Encounter a fire type pokemon",team: valor)
+catch_five_water = Task.create(name:"Catch five water pokemon",description: "Catch any five water type pokemon.", reward: "Encounter a water type pokemon",team: mystic)
+catch_five_electric = Task.create(name:"Catch five electric pokemon",description: "Catch any five electric type pokemon.", reward: "Encounter a electric type pokemon",team: instinct)
+catch_five_dark = Task.create(name:"Catch five dark pokemon",description: "Catch any five dark type pokemon.", reward: "Encounter a dark type pokemon",team: rocket)
