@@ -1,12 +1,12 @@
 class TasksController < ApplicationController
     def index
         @tasks = Task.all
-        render json: @tasks, include: :team
+        render json: @tasks
     end 
 
     def show
         @task = Task.find(params[:id])
-        render json: @task, include: :team
+        render json: @task
     end
 
     def create
