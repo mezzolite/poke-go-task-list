@@ -4,6 +4,7 @@ body {
     font-family: 'Alegreya SC', serif;
     background-color: black;
     color: thistle;
+    position: absolute;
 }
 
 h1 {
@@ -18,8 +19,8 @@ h1 {
 }
 
 .teamCard > img {
-    max-width: 90%;
-    max-height: 90%;
+    width: 90%;
+    height: 70%;
 }
 
 .teamCard > button {
@@ -31,6 +32,15 @@ h1 {
     padding: 5%;
     font-size: 100%;
     font-family: 'Alegreya SC', serif;
+}
+
+.teamCard > button > a:link {
+    text-decoration: none;
+    color: thistle;
+}
+
+.teamCard > button > a:visited {
+    color: inherit;
 }
 
 .teamCard {

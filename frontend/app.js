@@ -10,8 +10,8 @@ fetch("http://localhost:3000/teams")
         const teamButton = document.createElement('button')
 
         teamName.innerText = `Team ${team.name}` 
-        teamImage.src = team.image 
-        teamButton.innerText = `Enter Team ${team.name}!`
+        teamImage.src = team.image
+        teamButton.innerHTML = `<a href=team.html?id=${team.id}>Enter Team ${team.name}</a>`
 
         const teamCard = document.createElement('div')
         teamCard.className = "teamCard"

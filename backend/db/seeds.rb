@@ -26,4 +26,4 @@ rocket = Team.create(
     description: "Team Rocket is a criminal syndicate set to steal other people's Pokémon, with their headquarters in the Kanto Region and the Johto region and a branch in Sevii Islands. They are headed by Giovanni, who also doubles as the Viridian City Gym Leader.",
     image: "https://fadeawayworld.com/wp-content/uploads/2017/09/HOU.png",
     leader: "Giovanni",
-    leader_image: "http://fanaru.com/pokemon/image/142988-pokemon-giovanni-team-rocket-leader.png")
+    leader_image: "https://www.futuregamereleases.com/wp-content/uploads/2019/07/pokemon-go-giovanni-event.png")
