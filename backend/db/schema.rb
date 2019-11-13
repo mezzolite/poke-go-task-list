@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_163929) do
+ActiveRecord::Schema.define(version: 2019_11_13_171416) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
@@ -32,5 +32,14 @@ ActiveRecord::Schema.define(version: 2019_11_12_163929) do
     t.string "leader_image"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.integer "team_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["team_id"], name: "index_users_on_team_id"
+  end
+
   add_foreign_key "tasks", "teams"
+  add_foreign_key "users", "teams"
 end

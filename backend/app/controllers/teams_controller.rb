@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
 
     def index
         teams = Team.all 
-        render json: teams, include: :tasks 
+        render json: teams, include: :tasks
     end
 
     def show
