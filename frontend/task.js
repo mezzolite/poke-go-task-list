@@ -9,6 +9,8 @@ const nameInput = document.querySelector("#name")
 const descriptionInput = document.querySelector("#description")
 const rewardInput = document.querySelector("#reward")
 const editForm = document.querySelector("#editForm")
+const attributeContainer = document.createElement("div")
+attributeContainer.id = "taskContainer"
 
 if(edit){
     editForm.style.display = "block"
@@ -23,13 +25,12 @@ fetch(task_id_url)
     .then(editTaskAttributes)
 
 
+
 function parseJson(response){
     return response.json()
 }
     
 function taskAttributes(task){
-    const attributeContainer = document.createElement("div")
-    attributeContainer.className = "taskContainer"
     const nameHeader = document.createElement("h3")
     nameHeader.id = "nameHeader"
     const descriptionHeader = document.createElement("h4")
