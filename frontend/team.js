@@ -27,6 +27,16 @@ function parseJson(response){
     return response.json()
 }
 
+if (document.addEventListener) {
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted || window.performance && 
+            window.performance.navigation.type == 2) 
+        {
+            location.reload();
+        }
+    })
+}
+
 function specificTeamCard(team){
     const teamName = document.querySelector('#teamHeader')
     const teamDescription = document.createElement('h4')
@@ -54,15 +64,15 @@ function createTaskCard(team){
 function taskAttributes(task){
     const taskDiv = document.createElement("div")
     const taskLi = document.createElement("input")
-        taskLi.id = "taskList"
+    taskLi.id = "taskList"
     const taskList = document.createElement("label")
-        taskList.for = "taskList"
+    taskList.for = "taskList"
     const deleteButton = document.createElement("button")
-        deleteButton.textContent = "Delete"
+    deleteButton.textContent = "Delete"
     const edit = document.createElement("a")
-        edit.id = "editButton"
-        edit.textContent = "Edit"
-        edit.href = `task.html?id=${task.id}&edit=true`
+    edit.id = "editButton"
+    edit.textContent = "Edit"
+    edit.href = `task.html?id=${task.id}&edit=true`
 
     taskList.innerHTML = ` <a href=task.html?id=${task.id}>${task.name}</a>`
     taskLi.type = "checkbox"
@@ -71,14 +81,21 @@ function taskAttributes(task){
     tasksUl.appendChild(taskDiv)
     taskListContainer.append(taskHeader, tasksUl)
 
+    deleteEvent(deleteButton, task)
+}
+
+function deleteEvent(deleteButton, task){
     deleteButton.addEventListener("click", event => {
         event.target.parentNode.remove()
-        fetch(`http://localhost:3000/tasks/${task.id}`, {
-            method: "DELETE",
-        })
+        backEndDeleteFetch(task)
     })
 }
 
+function backEndDeleteFetch(task){
+    return fetch(`http://localhost:3000/tasks/${task.id}`, {
+        method: "DELETE"
+    })
+}
 
 function getTeams(teams){
     return teams.map(teamOption)
