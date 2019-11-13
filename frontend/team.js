@@ -8,20 +8,24 @@ const taskListContainer = document.querySelector("#taskListContainer")
 const taskHeader = document.createElement("h3")
 taskHeader.innerText = "Task List"
 const tasksUl = document.createElement("ul")
+
 const taskForm = document.querySelector("#taskForm")
 
-
 fetch(team_id_url)
-    .then(response => response.json())
+    .then(parseJson)
     .then(specificTeamCard)
 
 fetch(team_id_url)
-    .then(response => response.json())
+    .then(parseJson)
     .then(createTaskCard)
 
 fetch(`http://localhost:3000/teams`)
-    .then(response => response.json())
+    .then(parseJson)
     .then(getTeams)
+
+function parseJson(response){
+    return response.json()
+}
 
 function specificTeamCard(team){
     const teamName = document.querySelector('#teamHeader')
@@ -56,13 +60,14 @@ function taskAttributes(task){
     const deleteButton = document.createElement("button")
         deleteButton.textContent = "Delete"
     const edit = document.createElement("a")
+        edit.id = "editButton"
         edit.textContent = "Edit"
-        edit.hrf = `task.html?id=${task.id}`
+        edit.href = `task.html?id=${task.id}&edit=true`
 
     taskList.innerHTML = ` <a href=task.html?id=${task.id}>${task.name}</a>`
     taskLi.type = "checkbox"
 
-    taskDiv.append(taskLi, taskList, deleteButton)
+    taskDiv.append(taskLi, taskList, deleteButton, edit)
     tasksUl.appendChild(taskDiv)
     taskListContainer.append(taskHeader, tasksUl)
 

@@ -17,16 +17,15 @@ class TasksController < ApplicationController
             team_id: params[:team_id]
         })
 
-        redirect_to "http://localhost:3001/"
+        redirect_to "http://localhost:3001/team.html?id=#{@task.team_id}"
     end
 
     def update
         @task = Task.find(params[:id])
         @task.update({
-            name: params[:id],
+            name: params[:name],
             description: params[:description],
-            reward: params[:reward],
-            team_id: params[:team_id]
+            reward: params[:reward]
         })
 
         render json: @task
