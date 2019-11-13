@@ -1,5 +1,6 @@
-Team.destroy_all
 Task.destroy_all
+User.destroy_all
+Team.destroy_all
 
 mystic = Team.create(
     name: "Mystic", 
@@ -58,3 +59,5 @@ catch_five_fire = Task.create(name:"Catch five fire pokemon",description: "Catch
 catch_five_water = Task.create(name:"Catch five water pokemon",description: "Catch any five water type pokemon.", reward: "Encounter a water type pokemon",team: mystic)
 catch_five_electric = Task.create(name:"Catch five electric pokemon",description: "Catch any five electric type pokemon.", reward: "Encounter a electric type pokemon",team: instinct)
 catch_five_dark = Task.create(name:"Catch five dark pokemon",description: "Catch any five dark type pokemon.", reward: "Encounter a dark type pokemon",team: rocket)
+
+User.create(username: "JaredLovesPokeGo", team: rocket)

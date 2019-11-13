@@ -39,6 +39,7 @@ function specificTeamCard(team){
     teamContainer.append(teamDescription, leaderCard)
     leaderCard.append(teamLeader, teamLeaderImage)
 }
+
 function createTaskCard(team){
     team.tasks.map(taskAttributes)
 }
