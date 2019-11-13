@@ -8,6 +8,7 @@ const taskListContainer = document.querySelector("#taskListContainer")
 const taskHeader = document.createElement("h3")
 taskHeader.innerText = "Task List"
 const tasksUl = document.createElement("ul")
+const taskForm = document.querySelector("#taskForm")
 
 
 fetch(team_id_url)
@@ -28,6 +29,8 @@ function specificTeamCard(team){
     const teamLeader = document.createElement('h4')
     const teamLeaderImage = document.createElement('img')
 
+    taskListContainer.style = `background-color: ${team.team_color}`
+    taskForm.style = `background-color: ${team.team_color}`
     teamName.innerText = `Team ${team.name}` 
     teamDescription.innerText = team.description 
     teamLeader.innerText = `Team Leader: ${team.leader}`
@@ -39,6 +42,7 @@ function specificTeamCard(team){
     teamContainer.append(teamDescription, leaderCard)
     leaderCard.append(teamLeader, teamLeaderImage)
 }
+
 function createTaskCard(team){
     team.tasks.map(taskAttributes)
 }
@@ -49,14 +53,27 @@ function taskAttributes(task){
         taskLi.id = "taskList"
     const taskList = document.createElement("label")
         taskList.for = "taskList"
+    const deleteButton = document.createElement("button")
+        deleteButton.textContent = "Delete"
+    const edit = document.createElement("a")
+        edit.textContent = "Edit"
+        edit.hrf = `task.html?id=${task.id}`
 
-    taskList.innerText = ` ${task.name}`
+    taskList.innerHTML = ` <a href=task.html?id=${task.id}>${task.name}</a>`
     taskLi.type = "checkbox"
 
-    taskDiv.append(taskLi, taskList)
+    taskDiv.append(taskLi, taskList, deleteButton)
     tasksUl.appendChild(taskDiv)
     taskListContainer.append(taskHeader, tasksUl)
+
+    deleteButton.addEventListener("click", event => {
+        event.target.parentNode.remove()
+        fetch(`http://localhost:3000/tasks/${task.id}`, {
+            method: "DELETE",
+        })
+    })
 }
+
 
 function getTeams(teams){
     return teams.map(teamOption)

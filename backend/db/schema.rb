@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_163929) do
+ActiveRecord::Schema.define(version: 2019_11_13_172554) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_163929) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "leader"
     t.string "leader_image"
+    t.string "team_color"
   end
 
   add_foreign_key "tasks", "teams"
