@@ -11,13 +11,13 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.create({
-            name: params[:id],
+            name: params[:name],
             description: params[:description],
             reward: params[:reward],
             team_id: params[:team_id]
         })
 
-        redirect_to "http://localhost:3001"
+        redirect_to "http://localhost:3001/"
     end
 
     def update

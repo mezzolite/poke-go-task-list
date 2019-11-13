@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_171416) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "leader"
     t.string "leader_image"
+    t.string "team_color"
   end
 
   create_table "users", force: :cascade do |t|

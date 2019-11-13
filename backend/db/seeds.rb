@@ -7,28 +7,32 @@ mystic = Team.create(
     description: "Team Mystic relies on analyzing every situation. Mystic's members believe that Pokémon have immeasurable wisdom and are interested in learning more about why Pokémon experience evolution.",
     image: "https://vignette.wikia.nocookie.net/pokemongo/images/f/f4/Team_Mystic.png/revision/latest?cb=20160717150716",
     leader: "Blanche",
-    leader_image: "https://vignette.wikia.nocookie.net/pokemongo/images/9/97/Icon_Blanche.png/revision/latest?cb=20181208030949")
+    leader_image: "https://vignette.wikia.nocookie.net/pokemongo/images/9/97/Icon_Blanche.png/revision/latest?cb=20181208030949",
+    team_color: "#98d4f9cf")
 
 valor = Team.create(
     name: "Valor", 
     description: "Team Valor relies on strength in battle. Valor's members believe that Pokémon are stronger and more warmhearted than humans and are interested in enhancing their natural power.",
     image: "https://vignette.wikia.nocookie.net/pokemongo/images/2/22/Team_Valor.png/revision/latest?cb=20160717150715",
     leader: "Candela",
-    leader_image:"https://vignette.wikia.nocookie.net/pokemongo/images/5/53/Icon_Candela.png/revision/latest?cb=20181208030955")
+    leader_image:"https://vignette.wikia.nocookie.net/pokemongo/images/5/53/Icon_Candela.png/revision/latest?cb=20181208030955",
+    team_color: "#ff99ab")
 
 instinct = Team.create(
     name: "Instinct", 
     description: "Team Instinct relies on a trainer's instincts. Instinct's members believe that Pokémon have excellent intuition and are interested in learning more about its connection to the egg hatching process.",
     image: "https://vignette.wikia.nocookie.net/pokemongo/images/d/d4/Team_Instinct.png/revision/latest?cb=20160717150717",
     leader: "Spark",
-    leader_image:"https://vignette.wikia.nocookie.net/pokemongo/images/a/aa/Icon_Spark.png/revision/latest?cb=20181208031001")
+    leader_image:"https://vignette.wikia.nocookie.net/pokemongo/images/a/aa/Icon_Spark.png/revision/latest?cb=20181208031001",
+    team_color: "lemonchiffon")
 
 rocket = Team.create(
     name: "Rocket", 
     description: "Team Rocket is a criminal syndicate set to steal other people's Pokémon, with their headquarters in the Kanto Region and the Johto region and a branch in Sevii Islands. They are headed by Giovanni, who also doubles as the Viridian City Gym Leader.",
     image: "https://fadeawayworld.com/wp-content/uploads/2017/09/HOU.png",
-    leader: "Giovanni",
-    leader_image: "https://www.futuregamereleases.com/wp-content/uploads/2019/07/pokemon-go-giovanni-event.png")
+    leader: "Giovanni", 
+    leader_image: "https://66.media.tumblr.com/51a61c5d717e1ec4533f5cd45537e30f/6895a555e794bfbd-05/s128x128u_c1/a6b18cec33e8534ce5888f972b7d434a1f0cac7b.jpg",
+    team_color: "rebeccapurple")
 
 
 m_make_five_nice_throws = Task.create(name: "Make five nice throws",description: "Make five nice throws in a row.",reward: "5 great balls",team: mystic)
