@@ -10,8 +10,10 @@
 <body>
     <header>
         <nav>
-            <form onsubmit="changeForm()" id="userForm" method="POST" action="http://localhost:3000/users">
-                <h4>Sign Up</h4>
+            <button class="signUpButton" type="button">Sign Up</button>
+            <button class="logInButton" type="button">Log In</button>
+            
+            <form style='display:none' id="userForm" method="POST" action="http://localhost:3000/users">
                 <label for="username">Username</label>
                 <input id="username" name="username"/>
                 <select id="teamId" name="team_id">
@@ -19,6 +21,13 @@
                 </select>
                 <input id='createButton' type="submit" value="Create SignIn">
             </form>
+
+            <form style='display:none' id="logInForm">
+                <label for="logInUsername">Username</label>
+                <input id="logInUsername" name="username"/>
+                <input id="logInButton" type="submit" value="Log In">
+            </form>
+
         </nav>
     </header>
 

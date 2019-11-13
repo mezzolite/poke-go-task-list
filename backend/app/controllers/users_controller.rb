@@ -11,11 +11,16 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create({
+        @user = User.new({
             username: params[:username],
             team_id: params[:team_id]
         })
-        redirect_to "http://localhost:3001"
+        if @user.valid?
+            @user.save
+            redirect_to "http://localhost:3001"
+        else 
+            redirect_to "http://localhost:3001?error=true"
+        end
     end
 
 end
