@@ -1,7 +1,6 @@
 const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
 const edit = params.get('edit')
-console.log(edit)
 
 const task_id_url = `http://localhost:3000/tasks/${id}`
 
@@ -34,10 +33,13 @@ function parseJson(response){
     
 function taskAttributes(task){
     const attributeContainer = document.createElement("div")
-        attributeContainer.className = "taskContainer"
+    attributeContainer.className = "taskContainer"
     const nameHeader = document.createElement("h3")
+    nameHeader.id = "nameHeader"
     const descriptionHeader = document.createElement("h4")
+    descriptionHeader.id = "descriptionHeader"
     const rewardHeader = document.createElement("h4")
+    rewardHeader.id = "rewardHeader"
 
     nameHeader.textContent = `Task name: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
@@ -48,6 +50,10 @@ function taskAttributes(task){
 }
 
 function editTaskAttributes(task){
+    const newName = document.querySelector("#nameHeader")
+    const newDescription = document.querySelector("#descriptionHeader")
+    const newReward = document.querySelector("#rewardHeader")
+
     nameInput.value = task.name
     descriptionInput.value = task.description
     rewardInput.value = task.reward
@@ -67,6 +73,9 @@ function editTaskAttributes(task){
             })
         })
         .then(() => window.location = `http://localhost:3001/task.html?id=${task.id}&edit=true`)
+        newName.textContent = task.name
+        newDescription.textContent = task.description
+        newReward.textContent = task.reward
     })
 }
 
