@@ -17,7 +17,7 @@ class TasksController < ApplicationController
             team_id: params[:team_id]
         })
 
-        render json: @task
+        redirect_to "http://localhost:3001"
     end
 
     def update
