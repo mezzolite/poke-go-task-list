@@ -23,10 +23,6 @@ fetch(task_id_url)
     .then(editTaskAttributes)
 
 
-// fetch(`http://localhost:3000/teams`)
-//     .then(parseJson)
-//     .then(getTeams)
-
 function parseJson(response){
     return response.json()
 }
@@ -50,28 +46,23 @@ function taskAttributes(task){
 }
 
 function editTaskAttributes(task){
-    const newName = document.querySelector("#nameHeader")
-    const newDescription = document.querySelector("#descriptionHeader")
-    const newReward = document.querySelector("#rewardHeader")
-
     nameInput.value = task.name
     descriptionInput.value = task.description
     rewardInput.value = task.reward
 
+    editEvent(task)
+}
+
+function editEvent(task){
     editTask.addEventListener("click", event => {
         event.preventDefault()
 
-        fetch(task_id_url, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: nameInput.value,
-                description: descriptionInput.value,
-                reward: rewardInput.value,
-            })
-        })
+        const newName = document.querySelector("#nameHeader")
+        const newDescription = document.querySelector("#descriptionHeader")
+        const newReward = document.querySelector("#rewardHeader")
+
+        backEndPatchFetch()
+
         .then(() => window.location = `http://localhost:3001/task.html?id=${task.id}&edit=true`)
         newName.textContent = task.name
         newDescription.textContent = task.description
@@ -79,15 +70,16 @@ function editTaskAttributes(task){
     })
 }
 
-// function getTeams(teams){
-//     return teams.map(teamOption)
-// }
-    
-// function teamOption(team){
-//     const option = document.createElement("option")
-    
-//     option.textContent = team.name
-//     option.value = team.id
-    
-//     teamId.append(option)
-// }
+function backEndPatchFetch(){
+    return fetch(task_id_url, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: nameInput.value,
+            description: descriptionInput.value,
+            reward: rewardInput.value
+        })
+    })
+}
