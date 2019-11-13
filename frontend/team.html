@@ -6,7 +6,22 @@
     <link rel="stylesheet" href="team.css"/>
 </head>
 <body>
-    
+    <h2 id="teamHeader"></h2>
+    <div id="teamContainer"></div>
+    <div id="taskListContainer"></div>
+    <form id="taskForm" method="POST" action="http://localhost:3000/teams">
+        <h4>Create a new Task</h4>
+        <label for="name">Name</label>
+        <input id="name" name="name"/>
+        <label for="description">Description</label>
+        <input id="description" name="description"/>
+        <label for="reward">Reward</label>
+        <input id="reward" name="reward"/>
+        <select id="teamId" name="team_id">
+            <option selected=disabled>Select your team</option>
+        </select>
+        <input type="submit" value="Submit your task!">
+    </form>
     <script src="team.js"></script>
 </body>
 </html>
