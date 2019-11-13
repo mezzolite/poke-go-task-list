@@ -10,6 +10,7 @@ taskHeader.innerText = "Task List"
 const tasksUl = document.createElement("ul")
 
 const taskForm = document.querySelector("#taskForm")
+const taskContainer = document.getElementById("#taskContainer")
 
 fetch(team_id_url)
     .then(parseJson)
@@ -43,8 +44,10 @@ function specificTeamCard(team){
     const teamLeader = document.createElement('h4')
     const teamLeaderImage = document.createElement('img')
 
-    taskListContainer.style = `background-color: ${team.team_color}`
-    taskForm.style = `background-color: ${team.team_color}`
+    taskListContainer.style = backgroundColor(team)
+    taskForm.style = backgroundColor(team)
+    taskColoring(team)
+
     teamName.innerText = `Team ${team.name}` 
     teamDescription.innerText = team.description 
     teamLeader.innerText = `Team Leader: ${team.leader}`
@@ -55,6 +58,14 @@ function specificTeamCard(team){
 
     teamContainer.append(teamDescription, leaderCard)
     leaderCard.append(teamLeader, teamLeaderImage)
+}
+
+function taskColoring(team){
+    taskContainer.style = backgroundColor(team)
+}
+
+function backgroundColor(team){
+    return `background-color: ${team.team_color}`
 }
 
 function createTaskCard(team){
