@@ -42,10 +42,10 @@ logInForm.addEventListener('submit', (event) => {
         window.location = `http://localhost:3001/team.html?id=${user.team_id}`
     }
     else {
-        alert("Username does not exist.")
+        // alert("Username does not exist.")
         window.location = "http://localhost:3001"
     }
-}))
+    }))
 })
 
 function createTeamCards(teams){
