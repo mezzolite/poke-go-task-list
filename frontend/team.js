@@ -2,17 +2,14 @@ const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
 const team_id_url = `http://localhost:3000/teams/${id}`
 
-const teamContainer = document.createElement('div')
-teamContainer.className = "teamContainer"
-const taskContainer = document.createElement('div')
-taskContainer.className = "taskContainer"
-document.body.append(teamContainer, taskContainer)
+const teamContainer = document.querySelector("#teamContainer")
+const teamId = document.querySelector("#teamId")
 
 
 fetch(team_id_url)
     .then(response => response.json())
     .then(team => {
-        const teamName = document.createElement('h2')
+        const teamName = document.querySelector('#teamHeader')
         const teamDescription = document.createElement('h4')
         const teamLeader = document.createElement('h4')
         const teamLeaderImage = document.createElement('img')
@@ -24,8 +21,8 @@ fetch(team_id_url)
 
         const leaderCard = document.createElement('div')
         leaderCard.className = "leaderCard"
-        
-        teamContainer.append(teamName, teamDescription, leaderCard)
+
+        teamContainer.append(teamDescription, leaderCard)
         leaderCard.append(teamLeader, teamLeaderImage)
     })
 
@@ -33,18 +30,41 @@ fetch(team_id_url)
     .then(response => response.json())
     .then(createCard)
 
+fetch(`http://localhost:3000/teams`)
+    .then(response => response.json())
+    .then(getTeams)
+
 function createCard(team){
-    const taskListContainer = document.createElement("div")
+    const taskListContainer = document.querySelector("#taskListContainer")
     const taskHeader = document.createElement("h3")
     taskHeader.innerText = "Task List"
+    const tasksUl = document.createElement("ul")
+    
     team.tasks.map(task => {
-        const tasksUl = document.createElement("ul")
-        const taskLi = document.createElement("li")
+        const taskDiv = document.createElement("div")
+        const taskLi = document.createElement("input")
+            taskLi.id = "taskList"
+        const taskList = document.createElement("label")
+            taskList.for = "taskList"
+    
+        taskList.innerText = ` ${task.name}`
+        taskLi.type = "checkbox"
 
-        taskLi.innerText = task.name
-
-        tasksUl.appendChild(taskLi)
-        taskListContainer.appendChild(tasksUl)
+        taskDiv.append(taskLi, taskList)
+        tasksUl.appendChild(taskDiv)
+        taskListContainer.append(taskHeader, tasksUl)
     })
-    document.body.append(taskHeader,taskListContainer)
+}
+
+function getTeams(teams){
+    return teams.map(teamOption)
+}
+
+function teamOption(team){
+    const option = document.createElement("option")
+
+    option.textContent = team.name
+    option.value = team.id
+
+    teamId.append(option)
 }
