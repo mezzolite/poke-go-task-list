@@ -10,8 +10,8 @@ const descriptionInput = document.querySelector("#description")
 const rewardInput = document.querySelector("#reward")
 const rewardImageInput = document.querySelector("#rewardImage")
 const editForm = document.querySelector("#editForm")
-const attributeContainer = document.getElementById("attributeContainer")
 
+const attributeContainer = document.querySelector("#attributeContainer")
 
 if(edit){
     editForm.style.display = "block"
