@@ -14,6 +14,7 @@ class TasksController < ApplicationController
             name: params[:name],
             description: params[:description],
             reward: params[:reward],
+            reward_image: params[:reward_image],
             team_id: params[:team_id]
         })
 
@@ -25,7 +26,8 @@ class TasksController < ApplicationController
         @task.update({
             name: params[:name],
             description: params[:description],
-            reward: params[:reward]
+            reward: params[:reward],
+            reward_image: params[:reward_image]
         })
 
         render json: @task
