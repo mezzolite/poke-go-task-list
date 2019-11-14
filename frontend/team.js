@@ -78,22 +78,19 @@ function createTaskCard(team){
 function taskAttributes(task){
     const taskDiv = document.createElement("div")
     taskDiv.className = "taskDiv"
-    const taskLi = document.createElement("input")
+    const taskLi = document.createElement("li")
     taskLi.id = "taskList"
-    const taskList = document.createElement("label")
-    taskList.for = "taskList"
     const deleteButton = document.createElement("button")
     deleteButton.id = "deleteButton"
     const edit = document.createElement("a")
     edit.id = "editButton"
 
-    taskList.innerHTML = ` <a href=task.html?id=${task.id}>${task.name}</a>`
-    taskLi.type = "checkbox"
+    taskLi.innerHTML = ` <a href=task.html?id=${task.id}>${task.name}</a>`
     deleteButton.textContent = "Delete"
     edit.textContent = "Edit"
     edit.href = `task.html?id=${task.id}&edit=true`
 
-    taskDiv.append(taskLi, taskList, deleteButton, edit)
+    taskDiv.append(taskLi, deleteButton, edit)
     tasksUl.appendChild(taskDiv)
     taskListContainer.append(taskHeader, tasksUl)
 
