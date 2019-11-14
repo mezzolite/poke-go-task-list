@@ -12,7 +12,7 @@
     <div id="teamContainer"></div>
     <div id="taskListContainer"></div>
     <form id="taskForm" method="POST" action="http://localhost:3000/tasks">
-        <h4>Create a new Task</h4>
+        <h5>CREATE A NEW TASK</h5>
         <label for="name">Name</label>
         <input id="name" name="name"/>
         <label for="description">Description</label>
@@ -22,7 +22,7 @@
         <select id="teamId" name="team_id">
             <option selected=disabled>Select your team</option>
         </select>
-        <input type="submit" value="Submit your task!">
+        <input id="submitButton" type="submit" value="Submit your task!">
     </form>
     <script src="team.js"></script>
 </body>
