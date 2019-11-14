@@ -5,3 +5,11 @@ body {
     color: thistle;
     font-family: 'Hepta Slab', serif;
 }
+
+#taskContainer {
+    background-color: lightslategray;
+    margin: 5% 30%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 2rem;
+}
