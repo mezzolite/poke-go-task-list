@@ -7,18 +7,36 @@ body {
 }
 
 #teamHomeImage {
-    height: 15%;
-    width: 10%;
+    height: 10%;
+    width: 7%;
     cursor: pointer;
     position: absolute;
     top: 50px;
-    margin-left: 4%;
+    left: 50px;
 }
 
-#taskContainer {
+#attributeContainer {
     background-color: lightslategray;
     margin: 10% 30%;
-    text-align: center;
+    text-align: left;
+    font-weight: bolder;
     padding: 1rem;
     font-size: 2rem;
+}
+
+h3 {
+    padding: 1%;
+}
+
+#rewardImage {
+    width: 30%;
+    height: 30%;
+    padding: 3%;
+    padding-left: 1%;
+}
+
+#editForm {
+    background-color: lightslategray;
+    padding: 2%;
+
 }

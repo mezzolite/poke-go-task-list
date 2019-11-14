@@ -149,6 +149,7 @@ ul > div:hover {
     cursor: pointer;
     position: absolute;
     top: 50px;
+    left: 50px;
 }
 
 #taskList {

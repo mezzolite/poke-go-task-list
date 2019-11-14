@@ -37,14 +37,14 @@ rocket = Team.create(
 
 m_make_five_nice_throws = Task.create(name: "Make five nice throws",description: "Make five nice throws in a row.",reward: "5 great balls", reward_image: "https://img.rankedboost.com/wp-content/uploads/2016/07/Great-Ball.png",team: mystic)
 m_hatch_three_eggs = Task.create(name: "Hatch three eggs",description: "Hatch three eggs.",reward: "1 razz berry",reward_image: "https://img.rankedboost.com/wp-content/uploads/2016/08/Pokemon-Go-Razz-Berry.png", team: mystic)
-m_use_five_berries = Task.create(name: "Use five berries",description: "Use five berries when trying to catch a pokemon.",reward: "200 stardust", reward_image: "https://www.google.com/search?q=stardust+pokemon&tbm=isch&sxsrf=ACYBGNTP2yVODg4PdCn_VNYUoMffnoqNjg:1573766151063&source=lnms&sa=X&ved=0ahUKEwjNuJLjz-rlAhUJnZ4KHf2HAyEQ_AUI-gEoAQ&biw=720&bih=699#imgrc=Bd9ypxDS-LieEM:",team: mystic)
+m_use_five_berries = Task.create(name: "Use five berries",description: "Use five berries when trying to catch a pokemon.",reward: "200 stardust", reward_image: "https://img.rankedboost.com/wp-content/uploads/2016/08/Pokemon-Go-Stardust-150x150.png",team: mystic)
 m_win_three_gym_battles = Task.create(name: "Win three gym battles",description: "Win three gym battles.",reward: "5 ultra Balls", reward_image: "https://cdn.bulbagarden.net/upload/thumb/5/5a/GO_Ultra_Ball.png/150px-GO_Ultra_Ball.png", team: mystic)
 m_send_ten_gifts_to_friends = Task.create(name: "Send ten gifts",description: "Send ten gifts to anyone in your friends list.",reward: "1 Rare Candy", reward_image: "https://gamepedia.cursecdn.com/pokemongo_gamepedia_en/a/a2/Rare_Candy.png",team: mystic)
 
 v_make_five_nice_throws = Task.create(name: "Make five nice throws",description: "Make five nice throws in a row.",reward: "2 max potions", reward_image: "https://cdn.bulbagarden.net/upload/thumb/8/85/GO_Max_Potion.png/200px-GO_Max_Potion.png",team: valor )
 v_hatch_three_eggs = Task.create(name: "Hatch three eggs",description: "Hatch three eggs.",reward: "1 max revive", reward_image: "https://cdn.bulbagarden.net/upload/thumb/d/d8/GO_Max_Revive.png/200px-GO_Max_Revive.png",team: valor)
 v_use_five_berries = Task.create(name: "Use five berries",description: "Use five berries when trying to catch a pokemon.",reward: "5 great balls",reward_image: "https://img.rankedboost.com/wp-content/uploads/2016/07/Great-Ball.png",team: valor)
-v_win_three_gym_battles = Task.create(name: "Win three gym battles",description: "Win three gym battles.",reward: "1000 star dust",reward_image: "https://www.google.com/search?q=stardust+pokemon&tbm=isch&sxsrf=ACYBGNTP2yVODg4PdCn_VNYUoMffnoqNjg:1573766151063&source=lnms&sa=X&ved=0ahUKEwjNuJLjz-rlAhUJnZ4KHf2HAyEQ_AUI-gEoAQ&biw=720&bih=699#imgrc=Bd9ypxDS-LieEM:",team: valor)
+v_win_three_gym_battles = Task.create(name: "Win three gym battles",description: "Win three gym battles.",reward: "1000 star dust",reward_image: "https://img.rankedboost.com/wp-content/uploads/2016/08/Pokemon-Go-Stardust-150x150.png",team: valor)
 v_send_ten_gifts_to_friends = Task.create(name: "Send ten gifts",description: "Send ten gifts to anyone in your friends list.",reward: "1 gift", reward_image: "https://cdn.bulbagarden.net/upload/4/47/GO_Gift.png",team: valor)
 
 i_make_five_nice_throws = Task.create(name: "Make five nice throws",description: "Make five nice throws in a row.",reward: "6 ultra balls",reward_image: "https://cdn.bulbagarden.net/upload/thumb/5/5a/GO_Ultra_Ball.png/150px-GO_Ultra_Ball.png",team: instinct )
@@ -65,3 +65,4 @@ catch_five_electric = Task.create(name:"Catch five electric pokemon",description
 catch_five_dark = Task.create(name:"Catch five dark pokemon",description: "Catch any five dark type pokemon.", reward: "Encounter a dark type pokemon",reward_image: "https://usercontent1.hubstatic.com/14592846_f520.jpg", team: rocket)
 
 User.create(username: "JaredLovesPokeGo", team: rocket)
+User.create(username: "mezzolite", team: mystic)
