@@ -65,14 +65,25 @@ img {
     padding-right: 32px;
 }
 
-div > label > a:link{
+div > li > a:link{
     color:thistle;
     text-decoration: none;
 }
 
-div > label > a:visited{
+div > li > a:visited{
     color:thistle;
     text-decoration: none;
+}
+
+ul > div {
+    transition: 0.3s;
+}
+
+ul > div:hover {
+    box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.658); 
+    transition: 0.7s cubic-bezier(0, 1%, 26%, 0.151);
+    transform: scale(1.0);
+    z-index: 10;
 }
 
 #deleteButton {
