@@ -6,9 +6,18 @@ body {
     font-family: 'Hepta Slab', serif;
 }
 
+#teamHomeImage {
+    height: 15%;
+    width: 10%;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    margin-left: 4%;
+}
+
 #taskContainer {
     background-color: lightslategray;
-    margin: 5% 30%;
+    margin: 10% 30%;
     text-align: center;
     padding: 1rem;
     font-size: 2rem;
