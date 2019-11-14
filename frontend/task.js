@@ -10,6 +10,7 @@ const descriptionInput = document.querySelector("#description")
 const rewardInput = document.querySelector("#reward")
 const rewardImageInput = document.querySelector("#rewardImage")
 const editForm = document.querySelector("#editForm")
+
 const attributeContainer = document.querySelector("#attributeContainer")
 
 if(edit){
@@ -31,19 +32,17 @@ function parseJson(response){
 function taskAttributes(task){
     const nameHeader = document.createElement("h3")
     nameHeader.id = "nameHeader"
-    const descriptionHeader = document.createElement("h4")
+    const descriptionHeader = document.createElement("h3")
     descriptionHeader.id = "descriptionHeader"
-    const rewardHeader = document.createElement("h4")
+    const rewardHeader = document.createElement("h3")
     rewardHeader.id = "rewardHeader"
     const teamHomeImage = document.createElement("img")
     teamHomeImage.id = "teamHomeImage"
 
-
-    nameHeader.textContent = `Task name: ${task.name}`
+    nameHeader.textContent = `Task: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
-    rewardHeader.textContent = `Reward: ${task.reward}
+    rewardHeader.textContent = `Reward: ${task.reward}`
     teamHomeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
-    console.log(task)
 
     if(task.rewardImage === null || task.rewardImage === ""){
         attributeContainer.append(nameHeader, descriptionHeader, rewardHeader)
