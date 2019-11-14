@@ -42,7 +42,6 @@ function taskAttributes(task){
     nameHeader.textContent = `Task: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
     rewardHeader.textContent = `Reward: ${task.reward}`
-    rewardImage.src = task.reward_image
     teamHomeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
 
     if(task.rewardImage === null || task.rewardImage === ""){
