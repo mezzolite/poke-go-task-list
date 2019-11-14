@@ -1,6 +1,4 @@
-const cardContainer = document.createElement('div')
-cardContainer.className = 'cardContainer'
-document.body.append(cardContainer)
+const cardContainer = document.querySelector('.cardContainer')
 const teamId = document.querySelector('#teamId')
 const signUpButton = document.querySelector('.signUpButton')
 const logInButton = document.querySelector('.logInButton')
@@ -38,11 +36,10 @@ logInForm.addEventListener('submit', (event) => {
     fetch('http://localhost:3000/users')
         .then(response => response.json())
         .then(users => users.map(user => {
-    if (user.username === logInInput.value){
+    if (user.username.toLowerCase() === logInInput.value.toLowerCase()){
         window.location = `http://localhost:3001/team.html?id=${user.team_id}`
     }
     else {
-        // alert("Username does not exist.")
         window.location = "http://localhost:3001"
     }
     }))

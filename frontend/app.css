@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Alegreya+SC&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap');
 
 body {
     font-family: 'Alegreya SC', serif;
@@ -11,11 +12,15 @@ h1 {
     font-weight: bold;
     text-align: center;
     font-size: 4rem;
+    margin-top: 3%;
 
 }
 
 .cardContainer {
     display: flex;
+    margin-top: 5%;
+    margin-bottom: 8%;
+
 }
 
 .teamCard > img {
@@ -45,4 +50,86 @@ h1 {
 
 .teamCard {
     padding: 2rem;
+}
+
+header {
+    width: 10%;
+}
+
+nav {
+    background-color: rgba(112, 128, 144, 0.616);
+    padding: 5%;
+    padding-left: 13%;
+   
+}
+
+.signUpButton {
+    margin-right: 5%;
+    border: none;
+    padding-top: 1%;
+    font-family: 'Alegreya SC', serif;
+    font-size: 100%;
+    background-color: thistle;
+}
+
+.logInButton {
+    border: none;
+    padding-top: 1%;
+    font-family: 'Alegreya SC', serif;
+    font-size: 100%;
+    background-color: thistle;
+}
+
+#userForm {
+    margin-right: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#teamId {
+    margin-top: 5%;
+    font-family: 'Hepta Slab', serif;
+}
+
+#username {
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+#createButton {
+    font-family: 'Alegreya SC', serif;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 7%;
+    border: none;
+    background-color: thistle;
+}
+
+option:nth-child(1), option:nth-child(5) {
+    font-family: 'Hepta Slab', serif;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+#logInForm {
+    margin-right: 20%;
+    margin-top: 5%; 
+    margin-bottom: 5%;
+}
+
+#logInUsername {
+    margin-top: 5%;
+}
+
+#logInButton {
+    margin-top: 7%;
+    border: none;
+    background-color: thistle;
+    font-family: 'Alegreya SC', serif;
+    font-size: 90%;
+}
+
+footer {
+    color: slategray;
+    text-align: right;
 }
