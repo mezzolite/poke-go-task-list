@@ -65,3 +65,4 @@ catch_five_electric = Task.create(name:"Catch five electric pokemon",description
 catch_five_dark = Task.create(name:"Catch five dark pokemon",description: "Catch any five dark type pokemon.", reward: "Encounter a dark type pokemon",reward_image: "https://usercontent1.hubstatic.com/14592846_f520.jpg", team: rocket)
 
 User.create(username: "JaredLovesPokeGo", team: rocket)
+User.create(username: "mezzolite", team: mystic)
