@@ -46,7 +46,6 @@ function specificTeamCard(team){
 
     taskListContainer.style = backgroundColor(team)
     taskForm.style = backgroundColor(team)
-    taskColoring(team)
 
     teamName.innerText = `Team ${team.name}` 
     teamDescription.innerText = team.description 
@@ -60,9 +59,6 @@ function specificTeamCard(team){
     leaderCard.append(teamLeader, teamLeaderImage)
 }
 
-function taskColoring(team){
-    taskContainer.style = backgroundColor(team)
-}
 
 function backgroundColor(team){
     return `background-color: ${team.team_color}`
