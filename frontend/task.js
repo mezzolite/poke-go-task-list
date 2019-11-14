@@ -35,15 +35,18 @@ function taskAttributes(task){
     descriptionHeader.id = "descriptionHeader"
     const rewardHeader = document.createElement("h4")
     rewardHeader.id = "rewardHeader"
-    const teamHomeImage = document.createElement('img')
+    const teamHomeImage = document.createElement("img")
     teamHomeImage.id = "teamHomeImage"
+    const rewardImage = document.createElement("img")
+    rewardImage.id = "rewardImage"
 
     nameHeader.textContent = `Task name: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
     rewardHeader.textContent = `Reward: ${task.reward}`
+    rewardImage.src = task.reward_image
     teamHomeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
     
-    attributeContainer.append(nameHeader, descriptionHeader, rewardHeader)
+    attributeContainer.append(nameHeader, descriptionHeader, rewardHeader, rewardImage)
     document.body.append(attributeContainer, teamHomeImage)
 
     teamHomeImage.addEventListener("click", event => {

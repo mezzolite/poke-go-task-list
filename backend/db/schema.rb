@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_172554) do
+ActiveRecord::Schema.define(version: 2019_11_14_211325) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_172554) do
     t.integer "team_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "reward_image"
     t.index ["team_id"], name: "index_tasks_on_team_id"
   end
 
