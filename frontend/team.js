@@ -33,7 +33,7 @@ if (document.addEventListener) {
         if (event.persisted || window.performance && 
             window.performance.navigation.type == 2) 
         {
-            location.reload();
+            location.reload()
         }
     })
 }
@@ -43,6 +43,8 @@ function specificTeamCard(team){
     const teamDescription = document.createElement('h4')
     const teamLeader = document.createElement('h4')
     const teamLeaderImage = document.createElement('img')
+    const homeImage = document.createElement('img')
+    homeImage.id = "homeImage"
 
     taskListContainer.style = backgroundColor(team)
     taskForm.style = backgroundColor(team)
@@ -51,12 +53,17 @@ function specificTeamCard(team){
     teamDescription.innerText = team.description 
     teamLeader.innerText = `Team Leader: ${team.leader}`
     teamLeaderImage.src = team.leader_image
+    homeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
 
     const leaderCard = document.createElement('div')
     leaderCard.className = "leaderCard"
 
-    teamContainer.append(teamDescription, leaderCard)
+    teamContainer.append(teamDescription, leaderCard, homeImage)
     leaderCard.append(teamLeader, teamLeaderImage)
+
+    homeImage.addEventListener("click", () => {
+        document.location.href = "http://localhost:3001/"
+    })
 }
 
 
@@ -70,19 +77,21 @@ function createTaskCard(team){
 
 function taskAttributes(task){
     const taskDiv = document.createElement("div")
+    taskDiv.className = "taskDiv"
     const taskLi = document.createElement("input")
     taskLi.id = "taskList"
     const taskList = document.createElement("label")
     taskList.for = "taskList"
     const deleteButton = document.createElement("button")
-    deleteButton.textContent = "Delete"
+    deleteButton.id = "deleteButton"
     const edit = document.createElement("a")
     edit.id = "editButton"
-    edit.textContent = "Edit"
-    edit.href = `task.html?id=${task.id}&edit=true`
 
     taskList.innerHTML = ` <a href=task.html?id=${task.id}>${task.name}</a>`
     taskLi.type = "checkbox"
+    deleteButton.textContent = "Delete"
+    edit.textContent = "Edit"
+    edit.href = `task.html?id=${task.id}&edit=true`
 
     taskDiv.append(taskLi, taskList, deleteButton, edit)
     tasksUl.appendChild(taskDiv)

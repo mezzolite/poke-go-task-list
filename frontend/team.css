@@ -5,16 +5,6 @@ body {
     color: thistle;
 }
 
-#teamContainer {
-    display: flex;
-    text-align: left;
-    margin: 5%;
-    font-family: 'Spectral SC', serif;
-}
-
-.leaderCard {
-    margin: 2%;
-}
 
 h2 {
     text-align: center;
@@ -31,17 +21,35 @@ h3 {
 
 h4 {
     font-size: 1.3rem;
-    margin: 1rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+
 }
 
 img {
-    width: 200%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#teamContainer {
+    display: flex;
+    text-align: left;
+    margin: 5%;
+    font-family: 'Spectral SC', serif;
+}
+
+.leaderCard {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 1%;
 }
 
 #taskListContainer {
-    margin-right: 30%;
-    margin-left: 30%;
+    margin-right: 25%;
+    margin-left: 25%;
     padding: 1rem;
 }
 
@@ -49,10 +57,51 @@ img {
     font-family: 'Hepta Slab', serif;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: #87cefabf;
     padding-bottom: 32px;
     padding-left: 32px;
     padding-right: 32px;
+}
+
+div > label > a:link{
+    color:thistle;
+    text-decoration: none;
+}
+
+div > label > a:visited{
+    color:thistle;
+    text-decoration: none;
+}
+
+#deleteButton {
+    font-family: 'Hepta Slab', serif;
+    font-size: 95%;
+    margin-left: 0.5rem;
+    border: none;
+    cursor:pointer;
+    background-color:lightslategray;
+    color:thistle;
+}
+
+#editButton {
+    margin: 0.3rem;
+}
+
+#editButton:link {
+    color:thistle;
+    text-decoration: none;
+}
+
+#editButton:visited {
+    color:thistle;
+    text-decoration: none;
+}
+
+#homeImage {
+    height: 15%;
+    width: 10%;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
 }
 
 ul > div {

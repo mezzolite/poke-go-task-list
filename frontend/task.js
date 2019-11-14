@@ -24,8 +24,6 @@ fetch(task_id_url)
     .then(parseJson)
     .then(editTaskAttributes)
 
-
-
 function parseJson(response){
     return response.json()
 }
@@ -37,13 +35,20 @@ function taskAttributes(task){
     descriptionHeader.id = "descriptionHeader"
     const rewardHeader = document.createElement("h4")
     rewardHeader.id = "rewardHeader"
+    const teamHomeImage = document.createElement('img')
+    teamHomeImage.id = "teamHomeImage"
 
     nameHeader.textContent = `Task name: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
     rewardHeader.textContent = `Reward: ${task.reward}`
+    teamHomeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
     
     attributeContainer.append(nameHeader, descriptionHeader, rewardHeader)
-    document.body.appendChild(attributeContainer)
+    document.body.append(attributeContainer, teamHomeImage)
+
+    teamHomeImage.addEventListener("click", event => {
+        document.location.href = `http://localhost:3001/team.html?id=${task.team_id}`
+    })
 }
 
 function editTaskAttributes(task){
