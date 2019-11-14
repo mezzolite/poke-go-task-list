@@ -10,8 +10,7 @@ const descriptionInput = document.querySelector("#description")
 const rewardInput = document.querySelector("#reward")
 const rewardImageInput = document.querySelector("#rewardImage")
 const editForm = document.querySelector("#editForm")
-const attributeContainer = document.createElement("div")
-attributeContainer.id = "taskContainer"
+const attributeContainer = document.querySelector("#attributeContainer")
 
 if(edit){
     editForm.style.display = "block"
@@ -42,8 +41,7 @@ function taskAttributes(task){
 
     nameHeader.textContent = `Task name: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
-    rewardHeader.textContent = `Reward: ${task.reward}`
-    rewardImage.src = task.reward_image
+    rewardHeader.textContent = `Reward: ${task.reward}
     teamHomeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
     console.log(task)
 
@@ -56,7 +54,7 @@ function taskAttributes(task){
         attributeContainer.append(nameHeader, descriptionHeader, rewardHeader, rewardImage)
     }
 
-    document.body.append(attributeContainer, teamHomeImage)
+    document.body.append(teamHomeImage)
 
     teamHomeImage.addEventListener("click", () => {
         document.location.href = `http://localhost:3001/team.html?id=${task.team_id}`
