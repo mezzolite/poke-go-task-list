@@ -8,6 +8,7 @@ const editTask = document.querySelector("#edit")
 const nameInput = document.querySelector("#name")
 const descriptionInput = document.querySelector("#description")
 const rewardInput = document.querySelector("#reward")
+const rewardImageInput = document.querySelector("#rewardImage")
 const editForm = document.querySelector("#editForm")
 const attributeContainer = document.createElement("div")
 attributeContainer.id = "taskContainer"
@@ -37,19 +38,27 @@ function taskAttributes(task){
     rewardHeader.id = "rewardHeader"
     const teamHomeImage = document.createElement("img")
     teamHomeImage.id = "teamHomeImage"
-    const rewardImage = document.createElement("img")
-    rewardImage.id = "rewardImage"
+
 
     nameHeader.textContent = `Task name: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
     rewardHeader.textContent = `Reward: ${task.reward}`
     rewardImage.src = task.reward_image
     teamHomeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
-    
-    attributeContainer.append(nameHeader, descriptionHeader, rewardHeader, rewardImage)
+    console.log(task)
+
+    if(task.rewardImage === null || task.rewardImage === ""){
+        attributeContainer.append(nameHeader, descriptionHeader, rewardHeader)
+    } else {
+        const rewardImage = document.createElement("img")
+        rewardImage.id = "rewardImageTag"
+        rewardImage.src = task.reward_image
+        attributeContainer.append(nameHeader, descriptionHeader, rewardHeader, rewardImage)
+    }
+
     document.body.append(attributeContainer, teamHomeImage)
 
-    teamHomeImage.addEventListener("click", event => {
+    teamHomeImage.addEventListener("click", () => {
         document.location.href = `http://localhost:3001/team.html?id=${task.team_id}`
     })
 }
@@ -58,6 +67,7 @@ function editTaskAttributes(task){
     nameInput.value = task.name
     descriptionInput.value = task.description
     rewardInput.value = task.reward
+    rewardImageInput.value = task.reward_image
 
     editEvent(task)
 }
@@ -66,16 +76,13 @@ function editEvent(task){
     editTask.addEventListener("click", event => {
         event.preventDefault()
 
-        const newName = document.querySelector("#nameHeader")
-        const newDescription = document.querySelector("#descriptionHeader")
-        const newReward = document.querySelector("#rewardHeader")
-
         backEndPatchFetch()
-
-        .then(() => window.location = `http://localhost:3001/task.html?id=${task.id}&edit=true`)
-        newName.textContent = task.name
-        newDescription.textContent = task.description
-        newReward.textContent = task.reward
+        .then(response => response.json())
+        .then(task => window.location = `http://localhost:3001/task.html?id=${task.id}&edit=true`)
+        nameInput.textContent = task.name
+        descriptionInput.textContent = task.description
+        rewardInput.textContent = task.reward
+        rewardImageInput.textContent = task.reward_image
     })
 }
 
@@ -88,7 +95,8 @@ function backEndPatchFetch(){
         body: JSON.stringify({
             name: nameInput.value,
             description: descriptionInput.value,
-            reward: rewardInput.value
+            reward: rewardInput.value,
+            reward_image: rewardImageInput.value
         })
     })
 }
