@@ -39,12 +39,13 @@ function taskAttributes(task){
     const teamHomeImage = document.createElement("img")
     teamHomeImage.id = "teamHomeImage"
 
+
     nameHeader.textContent = `Task: ${task.name}`
     descriptionHeader.textContent = `Description: ${task.description}`
     rewardHeader.textContent = `Reward: ${task.reward}`
     teamHomeImage.src = "https://vignette.wikia.nocookie.net/pokemongo/images/3/3b/Gym_Marker_Red.png/revision/latest?cb=20160801180325"
 
-    if(task.rewardImage === null || task.rewardImage === ""){
+    if(task.reward_image === null || task.reward_image === ""){
         attributeContainer.append(nameHeader, descriptionHeader, rewardHeader)
     } else {
         const rewardImage = document.createElement("img")
