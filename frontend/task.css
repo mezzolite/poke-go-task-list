@@ -17,7 +17,7 @@ body {
 
 #attributeContainer {
     background-color: lightslategray;
-    margin: 10% 30%;
+    margin: 5% 30%;
     text-align: left;
     font-weight: bolder;
     padding: 1rem;
@@ -25,10 +25,10 @@ body {
 }
 
 h3 {
-    padding: 1%;
+    padding: 2%;
 }
 
-#rewardImage {
+#rewardImageTag {
     width: 30%;
     height: 30%;
     padding: 3%;
@@ -36,6 +36,19 @@ h3 {
 }
 
 #editForm {
+    font-family: 'Hepta Slab', serif;
     background-color: lightslategray;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%;
     padding: 2%;
+    padding-left: 5%;
+}
+
+#edit {
+    border: none;
+    font-family: 'Hepta Slab', serif;
+    background-color: thistle;
+    font-size: 90%;
+
 }
