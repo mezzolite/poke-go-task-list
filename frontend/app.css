@@ -11,13 +11,13 @@ body {
 h1 {
     font-weight: bold;
     text-align: center;
-    font-size: 4rem;
+    font-size: 4.5rem;
     margin-top: 3%;
 
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 5%;
 }
 
@@ -39,7 +39,7 @@ h2 {
     border: none;
     cursor: pointer;
     padding: 5%;
-    font-size: 100%;
+    font-size: 150%;
     font-family: 'Alegreya SC', serif;
 }
 
