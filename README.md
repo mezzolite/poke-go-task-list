@@ -6,6 +6,9 @@
 ### Overview:
 PokeGo Task List is a website that allows a user to create a login, pick one of the game's teams, log in, see a list of tasks sorted by team, and edit or delete those tasks.
 
+### Demo: 
+[Project Demo Link](https://youtu.be/EUJgISS3RHE)
+
 ### Stack:
 Backend: Ruby on Rails  
 Frontend: HTML, CSS, JS
